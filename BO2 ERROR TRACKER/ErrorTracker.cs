@@ -5,7 +5,7 @@ using System.Windows.Forms;
 namespace BO2_ERROR_TRACKER {
     public partial class TrackerMain : Form {
         /* main variables */
-        /* Credits to lveez for some of these offsets */
+        /* Credits to lveez Bo2ErrorTracker for some of these offsets */
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
         public string ParentVarBase = "0x2DEA400";
         public string ParentVarNext = "0x2";
@@ -67,6 +67,7 @@ namespace BO2_ERROR_TRACKER {
         }
 
         private void TimerProgress_Tick(object sender, EventArgs e) {
+            //* Progress bar *//
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
             //* Parent_next *//
             barParentNext.Minimum = 0;
@@ -79,7 +80,7 @@ namespace BO2_ERROR_TRACKER {
             /* Parent_size */
             barParentSize.Minimum = 0;
             barParentSize.Maximum = 16384;
-            string pSize = $"{ParentVarBase}";
+            string pSize = $"{ParentVarBase}"; //created but not working
             string pSize1 = Mem.Read2Byte(pSize).ToString();
             barParentSize.Value = int.Parse(pSize1);
 
@@ -94,8 +95,8 @@ namespace BO2_ERROR_TRACKER {
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
             /* Child_size */
             barChildSize.Minimum = 0;
-            barChildSize.Maximum = 65536;
-            string cSize = Mem.Read2Byte(ChildBase).ToString();
+            barChildSize.Maximum = 65536; 
+            string cSize = Mem.Read2Byte(ChildBase).ToString(); //using child_next value/not working
             barChildSize.Value = int.Parse(cSize);
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -109,7 +110,7 @@ namespace BO2_ERROR_TRACKER {
             /* xAnimInfo_Size */
             barXanSize.Minimum = 0;
             barXanSize.Maximum = 4096;
-            string xSize = Mem.ReadInt(AnimInfoSize).ToString();
+            string xSize = Mem.ReadInt(AnimInfoSize).ToString(); //not working
             barXanSize.Value = int.Parse(xSize);
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
