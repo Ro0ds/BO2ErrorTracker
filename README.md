@@ -7,4 +7,4 @@
 * Same goes to child_size and xAnimInfo_size, reflecting child_next and xAnimInfo_next
 * com_frametime is going crazy, so i've created a third timer with 500ms, less than this wouldn't work properly
 
-<b>I open to suggestions, feel free to hit me up on discord: <i>Digo#8569</i></b>
+<b>I'm open to suggestions, feel free to hit me up on discord: <i>Digo#8569</i></b>
